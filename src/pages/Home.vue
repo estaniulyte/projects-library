@@ -17,12 +17,49 @@
         />
       </div>
     </v-row>
-    <v-container>
-      <v-row class="d-flex justify-space-between">
-        <h1 class="pl-2">Projects</h1>
-        <v-spacer></v-spacer>
+    <div class="mx-1 mx-sm-2 mx-md-10 px-5">
+      <v-row class="d-flex justify-center">
+          <h1 class="mt-3">Projects</h1>
       </v-row>
-    </v-container>
+      <v-row>
+        <v-col
+          cols="12"
+          sm="4"
+          md="3"
+          lg="2"
+          xl="1"
+          class="px-0"
+        >
+          <v-autocomplete
+            v-model="selected"
+            :items="orderBy"
+            outlined
+            dense
+          />
+        </v-col>
+        <v-col>
+          
+        </v-col>
+        <v-col
+          cols="12"
+          sm="4"
+          md="3"
+          lg="2"
+          xl="1"
+          class="d-flex justify-end px-0"
+        >
+          <v-btn
+            outlined
+            class="filter-btn"
+          >
+          <v-icon class="pr-2" size="20">
+            mdi-filter-variant
+          </v-icon>
+            Filters
+          </v-btn>
+        </v-col>
+      </v-row>
+    </div>
 	</div>
 </template>
 
@@ -31,7 +68,10 @@ import HomeAppBar from "../components/HomeAppBar.vue";
 
 export default {
     name: "HomePage",
-    data: () => ({}),
+    data: () => ({
+      orderBy: ['Most recent', 'Oldest', 'My projects', 'Popular', 'Recommended'],
+      selected: 'Most recent'
+    }),
     components: { HomeAppBar }
 }
 </script>
@@ -57,5 +97,19 @@ export default {
   align-items: center;
   box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
   border-radius: 8px;
+}
+
+.filter-btn {
+  text-transform: capitalize;
+  font-size: inherit;
+  width: 115px;
+  box-sizing: border-box;
+  border:1px solid #9e9e9e;
+  color: #212121;
+  font-weight: 400;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 </style>
