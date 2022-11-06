@@ -69,7 +69,7 @@ import HomeAppBar from "../components/HomeAppBar.vue";
 export default {
     name: "HomePage",
     data: () => ({
-      orderBy: ['Most recent', 'Oldest', 'My projects', 'Popular', 'Recommended'],
+      orderBy: ['Most recent', 'Oldest', 'My projects', 'Favorite', 'Popular', 'Recommended'],
       selected: 'Most recent'
     }),
     components: { HomeAppBar }
