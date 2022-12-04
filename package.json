@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "add-dist-subtree": "git add dist && git commit -m 'adding dist subtree'",
+    "deploy-to-ghpages": "git subtree push --prefix dist origin gh-pages",
+    "github-pages": "yarn build && yarn add-dist-subtree && yarn deploy-to-ghpages"
   },
   "dependencies": {
     "core-js": "^3.8.3",
