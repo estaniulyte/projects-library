@@ -82,6 +82,7 @@ export default {
       orderBy: ['Most recent', 'Oldest', 'My projects', 'Favorite', 'Popular', 'Recommended'],
       selected: 'Most recent',
       expand: false,
+      searchInput:'',
     }),
     components: {
       HomeAppBar,
