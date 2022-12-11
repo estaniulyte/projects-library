@@ -37,12 +37,10 @@
             dense
           />
         </v-col>
-        <v-col>
-          
-        </v-col>
+        <v-spacer />
         <v-col
           cols="12"
-          sm="4"
+          sm="3"
           md="3"
           lg="2"
           xl="1"
@@ -51,6 +49,9 @@
           <v-btn
             outlined
             class="filter-btn"
+            :class="{'grey lighten-3': expand}"
+            @click="expand = !expand"
+
           >
           <v-icon class="pr-2" size="20">
             mdi-filter-variant
@@ -59,20 +60,33 @@
           </v-btn>
         </v-col>
       </v-row>
+      <v-expand-transition>
+        <v-row v-show="expand">
+          <FilterField title="Tags" :properties="tag" />
+          <FilterField title="Render Pipeline" :properties="renderPipeline" />
+          <FilterField title="Platform" :properties="platform" :selectedItems="selectedPlatforms"/>
+          <FilterField title="Unity Tech Steam" :properties="unityStream" />
+        </v-row>
+      </v-expand-transition>
     </div>
 	</div>
 </template>
 
 <script>
 import HomeAppBar from "../components/HomeAppBar.vue";
+import FilterField from "@/components/FilterField.vue"
 
 export default {
     name: "HomePage",
     data: () => ({
       orderBy: ['Most recent', 'Oldest', 'My projects', 'Favorite', 'Popular', 'Recommended'],
-      selected: 'Most recent'
+      selected: 'Most recent',
+      expand: false,
     }),
-    components: { HomeAppBar }
+    components: {
+      HomeAppBar,
+      FilterField
+    }
 }
 </script>
 
