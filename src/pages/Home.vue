@@ -18,7 +18,7 @@
       </div>
     </v-row>
     <div class="mx-1 mx-sm-2 mx-md-10 px-5">
-      <v-row class="d-flex justify-center">
+      <v-row class="d-flex justify-center py-sm-4 title">
           <h1 class="mt-3">Projects</h1>
       </v-row>
       <v-row>
@@ -131,5 +131,9 @@ export default {
   @media screen and (max-width: 600px) {
     width: 100%;
   }
+}
+
+.title {
+  font-size: 20px;
 }
 </style>
