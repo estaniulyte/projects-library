@@ -12,9 +12,8 @@
     </v-row>
     <v-row>
       <v-autocomplete
-        v-model="selectedProperties"
         :items="properties"
-        class="transition-swing py-2 lol"
+        class="transition-swing py-2 field"
         filled
         item-value="id"
         item-text="name"
@@ -32,6 +31,7 @@
 </template>
 
 <script>
+
 export default {
 	name: "FilterField",
   props: {
@@ -41,6 +41,10 @@ export default {
     },
     title: {
       type: String,
+      default: null
+    },
+    selectedItems: {
+      type: Array,
       default: null
     }
   },
@@ -58,5 +62,14 @@ export default {
 ::v-deep .theme--light.v-chip:not(.v-chip--active) {
   background: #e1e8e5;
   margin: 4px;
+}
+
+::v-deep.v-responsive__sizer {
+  display: grid;
+  column-gap: 2rem !important;
+}
+
+.field {
+  z-index: 20;
 }
 </style>
