@@ -62,30 +62,9 @@
       <v-card
         elevation="0"
       >
-        <v-list-item-content class="justify-center" elevation="0">
-          <div class="mx-auto text-center">
-            <template
-              v-for="(item, index) of menuButtons"
-            >
-              <v-btn
-                @click="item.action ? item.action() : () => {}"
-                :key="index"
-                v-bind="item.bind"
-                small
-                text
-              >
-                {{ item.name }}
-              </v-btn>
-              <v-divider
-                v-if="menuButtons.length !== index+1"
-                :key="index"
-                class="my-3"
-              />
-            </template>
-          </div>
-        </v-list-item-content>
-      </v-card>
-    </v-menu>
+        <span class="ml-2">Add project</span>
+      </v-btn>
+      <AvatarButton />
   </v-app-bar>
 </template>
 
@@ -95,7 +74,6 @@ export default {
 	name: "HomeAppBar",
 	data: () => ({
     actionButtons: [
-      {
         name: 'Slack Channel',
         iconName: 'mdi-slack',
         iconSize: '19',
@@ -124,6 +102,9 @@ export default {
       }
     ]
 	})
+    components: {
+      AvatarButton,
+    }
 }
 </script>
 
