@@ -111,7 +111,7 @@ export default {
     name: "HomePage",
     data: () => ({
       orderBy: ['Most recent', 'Oldest', 'My projects', 'Favorite', 'Popular', 'Recommended'],
-      selected: 'Most recent',
+      selectedOrder: 'Most recent',
       expand: false,
       searchInput:'',
     }),
