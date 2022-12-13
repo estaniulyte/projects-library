@@ -114,6 +114,7 @@ export default {
       selectedOrder: 'Most recent',
       expand: false,
       searchInput:'',
+      tab: 'card-view',
     }),
     components: {
       HomeAppBar,
