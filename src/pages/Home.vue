@@ -21,7 +21,7 @@
       <v-row class="d-flex justify-center py-sm-4 title">
           <h1 class="mt-3">Projects</h1>
       </v-row>
-      <v-row>
+      <v-row class="px-sm-4">
         <v-col
           cols="12"
           sm="4"
@@ -31,11 +31,42 @@
           class="px-0"
         >
           <v-autocomplete
-            v-model="selected"
+            v-model="selectedOrder"
+            class="sortField"
             :items="orderBy"
             outlined
             dense
           />
+        </v-col>
+        <v-spacer />
+        <v-col
+          cols="12"
+          sm="5"
+          md="5"
+          lg="4"
+          xl="2"
+        >
+          <v-tabs
+            v-model="tab"
+            class="d-flex justify-center"
+          >
+            <v-tab
+              href="#card-view"
+            >
+              <v-icon size="19" class="mr-1">
+                mdi-view-grid-outline
+              </v-icon>
+              Card view
+            </v-tab>
+            <v-tab
+              href="#table-view"
+            >
+              <v-icon size="24" class="mr-1">
+                mdi-view-list-outline
+              </v-icon>
+              Table view
+            </v-tab>
+          </v-tabs>
         </v-col>
         <v-spacer />
         <v-col
