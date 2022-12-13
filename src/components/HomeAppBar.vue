@@ -5,7 +5,7 @@
     color="white"
   >
     <v-row class="d-none d-sm-inline-flex align-center">
-      <router-link to="/">Project Repository</router-link>
+      <router-link to="/">Projects Library</router-link>
       <v-spacer />
       <v-btn
         v-for="(item, index) of actionButtons"
