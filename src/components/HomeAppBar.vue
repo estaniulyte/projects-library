@@ -5,7 +5,7 @@
     color="white"
   >
     <v-row class="d-none d-sm-inline-flex align-center">
-      <router-link to="/">Project Repository</router-link>
+      <router-link to="/">Project Library</router-link>
       <v-spacer />
       <v-btn
         v-for="(item, index) of actionButtons"
@@ -68,7 +68,7 @@ export default {
           iconSize: "19",
           tootlip: "Feedback & Questions",
           bind: {
-            href: "slack://channel?team=T06AF9667&id=C021PV720QL"
+            href: "slack://"
           }
         },
         {
@@ -77,7 +77,7 @@ export default {
           iconSize: "17",
           tootlip: "Documentation",
           bind: {
-            href: "https://confluence.unity3d.com/display/QA/Projects+repository",
+            href: "",
             target: "_blank"
           }
         }
