@@ -5,7 +5,7 @@
     color="white"
   >
     <v-row class="d-none d-sm-inline-flex align-center">
-      <router-link to="/">Projects Library</router-link>
+      <router-link to="/">Project Repository</router-link>
       <v-spacer />
       <v-btn
         v-for="(item, index) of actionButtons"
@@ -31,8 +31,10 @@
       <v-btn
         class="px-7 py-5 mx-3"
         color="primary"
+        v-bind="attrs"
         elevation="0"
         small
+        @click="dialog = true"
       >
         <span class="ml-2">Add project</span>
       </v-btn>
@@ -43,15 +45,22 @@
       <v-spacer />
       <AvatarButton imageSize='40px' />
     </v-row>
+    <CreateProjectDialog
+      v-model="dialog"
+      justify="center"
+    />
   </v-app-bar>
 </template>
 
 <script>
 import AvatarButton from './AvatarButton.vue';
+import CreateProjectDialog from './CreateProjectDialog.vue';
 
 export default {
     name: "HomeAppBar",
     data: () => ({
+      dialog: false,
+      attrs: [],
       actionButtons: [
         {
           name: "Slack Channel",
@@ -59,7 +68,7 @@ export default {
           iconSize: "19",
           tootlip: "Feedback & Questions",
           bind: {
-            href: "slack://"
+            href: "slack://channel?team=T06AF9667&id=C021PV720QL"
           }
         },
         {
@@ -68,15 +77,21 @@ export default {
           iconSize: "17",
           tootlip: "Documentation",
           bind: {
-            href: "",
+            href: "https://confluence.unity3d.com/display/QA/Projects+repository",
             target: "_blank"
           }
         }
       ],
+      menuButtons: [
+          {
+              name: "Owned projects"
+          },
+          {
+              name: "Logout"
+          }
+      ]
     }),
-    components: {
-      AvatarButton,
-    }
+    components: { AvatarButton, CreateProjectDialog }
 }
 </script>
 
