@@ -1,0 +1,277 @@
+[
+  {
+    "__typename": "Tag",
+    "id": 1,
+    "name": "Terrain"
+  },
+  {
+    "__typename": "Tag",
+    "id": 2,
+    "name": "DOTS"
+  },
+  {
+    "__typename": "Tag",
+    "id": 3,
+    "name": "UI"
+  },
+  {
+    "__typename": "Tag",
+    "id": 4,
+    "name": "Polybrush"
+  },
+  {
+    "__typename": "Tag",
+    "id": 5,
+    "name": "Device Simulator"
+  },
+  {
+    "__typename": "Tag",
+    "id": 6,
+    "name": "Input System"
+  },
+  {
+    "__typename": "Tag",
+    "id": 7,
+    "name": "Physics"
+  },
+  {
+    "__typename": "Tag",
+    "id": 8,
+    "name": "Animations"
+  },
+  {
+    "__typename": "Tag",
+    "id": 9,
+    "name": "IAP"
+  },
+  {
+    "__typename": "Tag",
+    "id": 10,
+    "name": "Game Center"
+  },
+  {
+    "__typename": "Tag",
+    "id": 11,
+    "name": "Cinemachine"
+  },
+  {
+    "__typename": "Tag",
+    "id": 12,
+    "name": "3D"
+  },
+  {
+    "__typename": "Tag",
+    "id": 13,
+    "name": "2D"
+  },
+  {
+    "__typename": "Tag",
+    "id": 14,
+    "name": "Audio"
+  },
+  {
+    "__typename": "Tag",
+    "id": 15,
+    "name": "Timeline"
+  },
+  {
+    "__typename": "Tag",
+    "id": 16,
+    "name": "Asset Bundles"
+  },
+  {
+    "__typename": "Tag",
+    "id": 17,
+    "name": "Burst Compiler"
+  },
+  {
+    "__typename": "Tag",
+    "id": 18,
+    "name": "2D Lights"
+  },
+  {
+    "__typename": "Tag",
+    "id": 19,
+    "name": "Demo"
+  },
+  {
+    "__typename": "Tag",
+    "id": 20,
+    "name": "Models"
+  },
+  {
+    "__typename": "Tag",
+    "id": 21,
+    "name": "AI"
+  },
+  {
+    "__typename": "Tag",
+    "id": 22,
+    "name": "Open World"
+  },
+  {
+    "__typename": "Tag",
+    "id": 23,
+    "name": "GPU Decoration"
+  },
+  {
+    "__typename": "Tag",
+    "id": 24,
+    "name": "Object Pooling"
+  },
+  {
+    "__typename": "Tag",
+    "id": 25,
+    "name": "PhysX"
+  },
+  {
+    "__typename": "Tag",
+    "id": 26,
+    "name": "Ads"
+  },
+  {
+    "__typename": "Tag",
+    "id": 27,
+    "name": "Analytics"
+  },
+  {
+    "__typename": "Tag",
+    "id": 28,
+    "name": "Native Plugins"
+  },
+  {
+    "__typename": "Tag",
+    "id": 29,
+    "name": "TextMesh Pro"
+  },
+  {
+    "__typename": "Tag",
+    "id": 30,
+    "name": "ECS"
+  },
+  {
+    "__typename": "Tag",
+    "id": 31,
+    "name": "Game Architecture"
+  },
+  {
+    "__typename": "Tag",
+    "id": 32,
+    "name": "FBX"
+  },
+  {
+    "__typename": "Tag",
+    "id": 33,
+    "name": "Curved World Shader"
+  },
+  {
+    "__typename": "Tag",
+    "id": 34,
+    "name": "Sprites"
+  },
+  {
+    "__typename": "Tag",
+    "id": 35,
+    "name": "Shader Graph"
+  },
+  {
+    "__typename": "Tag",
+    "id": 36,
+    "name": "UI Builder"
+  },
+  {
+    "__typename": "Tag",
+    "id": 37,
+    "name": "ML Agents"
+  },
+  {
+    "__typename": "Tag",
+    "id": 38,
+    "name": "ProGrids"
+  },
+  {
+    "__typename": "Tag",
+    "id": 39,
+    "name": "Unity Reflect"
+  },
+  {
+    "__typename": "Tag",
+    "id": 40,
+    "name": "Tilemap"
+  },
+  {
+    "__typename": "Tag",
+    "id": 41,
+    "name": "Canvas"
+  },
+  {
+    "__typename": "Tag",
+    "id": 42,
+    "name": "Particle System"
+  },
+  {
+    "__typename": "Tag",
+    "id": 43,
+    "name": "Performance"
+  },
+  {
+    "__typename": "Tag",
+    "id": 44,
+    "name": "Mesh Renderer"
+  },
+  {
+    "__typename": "Tag",
+    "id": 45,
+    "name": "Skinned Mesh Renderer"
+  },
+  {
+    "__typename": "Tag",
+    "id": 46,
+    "name": "Custom Render Textures"
+  },
+  {
+    "__typename": "Tag",
+    "id": 47,
+    "name": "Progressive Lightmapper"
+  },
+  {
+    "__typename": "Tag",
+    "id": 48,
+    "name": "Realtime GI"
+  },
+  {
+    "__typename": "Tag",
+    "id": 49,
+    "name": "Post-Processing v2"
+  },
+  {
+    "__typename": "Tag",
+    "id": 50,
+    "name": "NavMesh"
+  },
+  {
+    "__typename": "Tag",
+    "id": 51,
+    "name": "Custom Shaders"
+  },
+  {
+    "__typename": "Tag",
+    "id": 52,
+    "name": "Video Player"
+  },
+  {
+    "__typename": "Tag",
+    "id": 53,
+    "name": "Tiny"
+  },
+  {
+    "__typename": "Tag",
+    "id": 54,
+    "name": "On Demand"
+  },
+  {
+    "__typename": "Tag",
+    "id": 55,
+    "name": "WebCam Textures"
+  }
+]
