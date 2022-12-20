@@ -93,7 +93,7 @@
       </v-row>
       <v-expand-transition>
         <v-row v-show="expand">
-          <FilterField title="Tags" :properties="tag" />
+          <FilterField title="Tags" :properties="tags" />
           <FilterField title="Render Pipeline" :properties="renderPipeline" />
           <FilterField title="Platform" :properties="platform" :selectedItems="selectedPlatforms"/>
           <FilterField title="Unity Tech Steam" :properties="unityStream" />
@@ -105,7 +105,8 @@
 
 <script>
 import HomeAppBar from "../components/HomeAppBar.vue";
-import FilterField from "@/components/FilterField.vue"
+import FilterField from "@/components/FilterField.vue";
+import tagsData from "@/assets/data/tags.json";
 
 export default {
     name: "HomePage",
@@ -115,6 +116,7 @@ export default {
       expand: false,
       searchInput:'',
       tab: 'card-view',
+      tags: tagsData
     }),
     components: {
       HomeAppBar,
