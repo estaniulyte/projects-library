@@ -1,0 +1,82 @@
+[
+  {
+    "__typename": "Platform",
+    "id": 1,
+    "name": "Android"
+  },
+  {
+    "__typename": "Platform",
+    "id": 2,
+    "name": "Standalone"
+  },
+  {
+    "__typename": "Platform",
+    "id": 3,
+    "name": "iOS"
+  },
+  {
+    "__typename": "Platform",
+    "id": 4,
+    "name": "XR"
+  },
+  {
+    "__typename": "Platform",
+    "id": 5,
+    "name": "VR"
+  },
+  {
+    "__typename": "Platform",
+    "id": 6,
+    "name": "AR"
+  },
+  {
+    "__typename": "Platform",
+    "id": 7,
+    "name": "Windows"
+  },
+  {
+    "__typename": "Platform",
+    "id": 8,
+    "name": "Mobile"
+  },
+  {
+    "__typename": "Platform",
+    "id": 9,
+    "name": "MacOS"
+  },
+  {
+    "__typename": "Platform",
+    "id": 10,
+    "name": "Nintendo Switch"
+  },
+  {
+    "__typename": "Platform",
+    "id": 11,
+    "name": "Xbox One"
+  },
+  {
+    "__typename": "Platform",
+    "id": 12,
+    "name": "Web Platform"
+  },
+  {
+    "__typename": "Platform",
+    "id": 13,
+    "name": "PS4"
+  },
+  {
+    "__typename": "Platform",
+    "id": 14,
+    "name": "tvOS"
+  },
+  {
+    "__typename": "Platform",
+    "id": 15,
+    "name": "Editor"
+  },
+  {
+    "__typename": "Platform",
+    "id": 16,
+    "name": "Stadia"
+  }
+]
