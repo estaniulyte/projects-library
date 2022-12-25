@@ -96,7 +96,7 @@
           <FilterField title="Tags" :properties="tags" />
           <FilterField title="Render Pipeline" :properties="renderPipelines" />
           <FilterField title="Platform" :properties="platforms" />
-          <FilterField title="Unity Tech Steam" :properties="unityStream" />
+          <FilterField title="Unity Tech Steam" :properties="unityStreams" />
         </v-row>
       </v-expand-transition>
     </div>
@@ -109,6 +109,7 @@ import FilterField from "@/components/FilterField.vue";
 import tagsData from "@/assets/data/tags.json";
 import platformsData from "@/assets/data/platforms.json";
 import renderPipelinesData from "@/assets/data/renderPipelines.json";
+import streamsData from "@/assets/data/streams.json";
 
 export default {
     name: "HomePage",
@@ -120,7 +121,8 @@ export default {
       tab: 'card-view',
       tags: tagsData,
       platforms: platformsData,
-      renderPipelines: renderPipelinesData
+      renderPipelines: renderPipelinesData,
+      unityStreams: streamsData
     }),
     components: {
       HomeAppBar,
