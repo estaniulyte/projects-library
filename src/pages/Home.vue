@@ -94,8 +94,8 @@
       <v-expand-transition>
         <v-row v-show="expand">
           <FilterField title="Tags" :properties="tags" />
-          <FilterField title="Render Pipeline" :properties="renderPipeline" />
-          <FilterField title="Platform" :properties="platforms" :selectedItems="selectedPlatforms"/>
+          <FilterField title="Render Pipeline" :properties="renderPipelines" />
+          <FilterField title="Platform" :properties="platforms" />
           <FilterField title="Unity Tech Steam" :properties="unityStream" />
         </v-row>
       </v-expand-transition>
@@ -108,6 +108,7 @@ import HomeAppBar from "../components/HomeAppBar.vue";
 import FilterField from "@/components/FilterField.vue";
 import tagsData from "@/assets/data/tags.json";
 import platformsData from "@/assets/data/platforms.json";
+import renderPipelinesData from "@/assets/data/renderPipelines.json";
 
 export default {
     name: "HomePage",
@@ -118,7 +119,8 @@ export default {
       searchInput:'',
       tab: 'card-view',
       tags: tagsData,
-      platforms: platformsData
+      platforms: platformsData,
+      renderPipelines: renderPipelinesData
     }),
     components: {
       HomeAppBar,
