@@ -1,0 +1,27 @@
+[
+  {
+    "__typename": "RenderPipeline",
+    "id": 1,
+    "name": "HDRP"
+  },
+  {
+    "__typename": "RenderPipeline",
+    "id": 2,
+    "name": "Universal RP"
+  },
+  {
+    "__typename": "RenderPipeline",
+    "id": 3,
+    "name": "Built-In"
+  },
+  {
+    "__typename": "RenderPipeline",
+    "id": 4,
+    "name": "2D RP"
+  },
+  {
+    "__typename": "RenderPipeline",
+    "id": 5,
+    "name": "Custom SRP"
+  }
+]
