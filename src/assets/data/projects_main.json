@@ -1,0 +1,87 @@
+[
+  {
+    "__typename": "Project",
+    "id": "41c55027-b88",
+    "name": "name",
+    "link": "link",
+    "imageLink": "imageLink",
+    "created": "2021-03-22T06:49:25.000Z",
+    "recommended": false,
+    "unityStreamVersion": {
+      "__typename": "UnityStream",
+      "id": 14,
+      "name": "2019.4"
+    },
+    "platforms": [
+      {
+        "__typename": "Platform",
+        "id": 1,
+        "name": "Android"
+      },
+      {
+        "__typename": "Platform",
+        "id": 3,
+        "name": "iOS"
+      },
+      {
+        "__typename": "Platform",
+        "id": 8,
+        "name": "Mobile"
+      },
+      {
+        "__typename": "Platform",
+        "id": 9,
+        "name": "MacOS"
+      }
+    ],
+    "renderPipelines": [
+      {
+        "__typename": "RenderPipeline",
+        "id": 3,
+        "name": "Built-In"
+      }
+    ],
+    "testedVersions": [
+      {
+        "__typename": "TestedVersion",
+        "id": 6,
+        "stream": {
+          "__typename": "UnityStream",
+          "id": 23,
+          "name": "2023.1"
+        },
+        "status": "PASS"
+      }
+    ],
+    "tags": [
+      {
+        "__typename": "Tag",
+        "id": 12,
+        "name": "3D"
+      },
+      {
+        "__typename": "Tag",
+        "id": 13,
+        "name": "2D"
+      },
+      {
+        "__typename": "Tag",
+        "id": 90,
+        "name": "Cloth"
+      }
+    ],
+    "primaryTags": [
+      {
+        "__typename": "Tag",
+        "id": 7,
+        "name": "Physics"
+      },
+      {
+        "__typename": "Tag",
+        "id": 61,
+        "name": "2D Physics"
+      }
+    ],
+    "favoredBy": []
+  }
+]
