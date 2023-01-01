@@ -99,6 +99,31 @@
           <FilterField title="Unity Tech Steam" :properties="unityStreams" />
         </v-row>
       </v-expand-transition>
+      <v-tabs-items v-model="tab">
+        <v-tab-item
+          value="card-view"
+        >
+          <v-row class="pa-0 mt-5">
+            <v-col
+              v-for="project in projects"
+              :key="project.id"
+              class="pa-0 px-0 pa-sm-4 py-2"
+              cols="12"
+              xl="2"
+              lg="3"
+              md="6"
+              sm="6"
+            >
+              <ProjectCard :project="project"/>
+            </v-col>
+          </v-row>
+        </v-tab-item>
+        <v-tab-item
+          value="table-view"
+        >
+          <ProjectsTable :projects="projects" />
+        </v-tab-item>
+      </v-tabs-items>
     </div>
 	</div>
 </template>
