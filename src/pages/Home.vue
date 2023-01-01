@@ -104,12 +104,16 @@
 </template>
 
 <script>
-import HomeAppBar from "../components/HomeAppBar.vue";
-import FilterField from "@/components/FilterField.vue";
-import tagsData from "@/assets/data/tags.json";
-import platformsData from "@/assets/data/platforms.json";
-import renderPipelinesData from "@/assets/data/renderPipelines.json";
-import streamsData from "@/assets/data/streams.json";
+import HomeAppBar from "../components/HomeAppBar.vue"
+import ProjectsTable from "../components/ProjectsTable.vue"
+import FilterField from "@/components/FilterField.vue"
+import ProjectCard from "@/components/ProjectCard.vue"
+
+import tagsData from "@/assets/data/tags.json"
+import platformsData from "@/assets/data/platforms.json"
+import renderPipelinesData from "@/assets/data/renderPipelines.json"
+import streamsData from "@/assets/data/streams.json"
+import projectsData from "@/assets/data/projects_main.json"
 
 export default {
     name: "HomePage",
@@ -122,11 +126,14 @@ export default {
       tags: tagsData,
       platforms: platformsData,
       renderPipelines: renderPipelinesData,
-      unityStreams: streamsData
+      unityStreams: streamsData,
+      projects: projectsData
     }),
     components: {
       HomeAppBar,
-      FilterField
+      FilterField,
+      ProjectCard,
+      ProjectsTable
     }
 }
 </script>
