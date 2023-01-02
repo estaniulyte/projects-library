@@ -113,12 +113,8 @@ export default {
   box-sizing: border-box;
   border-radius: 90px;
   height: 100%;
-  // width: 400px;
   position: relative;
-  // Add background color.
   background-color: black;
-  // Not needed now.
-  // padding-top: 17.8%;
   &:before {
     border-radius: 5px;
     content: "";
@@ -133,19 +129,13 @@ export default {
 }
 
 .content-wrapper {
-  // added to ensure it won't collapse.  
   min-height: 250px;
-  // changed to force container height.
   position: static;
-  // Not used now. 
-  // top: 0;
-  // left: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: flex-end;
-  // border-radius: 50px;
 }
 .image-wrapper {
   position: absolute;
