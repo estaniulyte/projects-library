@@ -105,7 +105,7 @@
         >
           <v-row class="pa-0 mt-5">
             <v-col
-              v-for="project in projects"
+              v-for="project in filteredProjects"
               :key="project.id"
               class="pa-0 px-0 pa-sm-4 py-2"
               cols="12"
@@ -121,7 +121,7 @@
         <v-tab-item
           value="table-view"
         >
-          <ProjectsTable :projects="projects" />
+          <ProjectsTable :projects="filteredProjects" />
         </v-tab-item>
       </v-tabs-items>
     </div>
@@ -159,6 +159,70 @@ export default {
       FilterField,
       ProjectCard,
       ProjectsTable
+    },
+    computed: {
+      filteredProjects: function() {
+        let tempProjects = this.projects
+
+        // add allTags and verifiedVersions properties, sort by most recent
+        tempProjects = tempProjects
+        .map(
+          (item) => ({
+            ...item,
+            allTags: [
+              ...item.renderPipelines.map(
+                (item) => ({
+                  ...item,
+                  type: "RenderPipeline"
+                })
+              ),
+              ...item.primaryTags.map(
+                (item) => ({
+                  ...item,
+                  type: "PrimaryTag"
+                })
+              ),
+              ...item.tags,
+            ],
+            verifiedVersions: [
+              item.unityStreamVersion,
+              ...item.testedVersions
+                .filter (
+                  (prop) => {
+                    if (prop.status === 'PASS')
+                    return prop
+                  }
+                )
+                .map (
+                  (prop) => {
+                    return prop.stream
+                  }
+                )
+            ]
+            .map(
+              (item) => ({
+                ...item,
+                metadata: item.name
+                  .split('.')
+                  .map(
+                    (number) => {
+                      return parseInt(number)
+                    }
+                  )
+              })
+            )
+            .sort(
+              (a, b) => {
+                return a.metadata[0] - b.metadata[0] || a.metadata[1] - b.metadata[1]
+              }
+            )
+            .reverse()
+          })
+        )
+        
+        return tempProjects
+      }
+
     }
 }
 </script>
@@ -203,6 +267,10 @@ export default {
   @media screen and (max-width: 600px) {
     width: 100%;
   }
+}
+
+.v-tab {
+  font-size: small;
 }
 
 .title {
