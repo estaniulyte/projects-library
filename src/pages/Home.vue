@@ -116,6 +116,21 @@
             >
               <ProjectCard :project="project"/>
             </v-col>
+            <v-col
+              class="d-flex flex-column justify-space-between align-center pt-10"
+              v-if="filteredProjects.length === 0"
+            >
+              <v-img
+                max-width="450"
+                class="align-center"
+                :src="require(`@/assets/images/notFound.svg`)"
+              />
+              <div
+                class="message-text font-weight-light pt-9"
+              >
+                No matching projects found
+              </div>
+            </v-col>
           </v-row>
         </v-tab-item>
         <v-tab-item
@@ -285,5 +300,9 @@ export default {
 
 .title {
   font-size: 20px;
+}
+
+.message-text {
+  font-size: 1.5rem!important;
 }
 </style>
