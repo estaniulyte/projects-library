@@ -140,6 +140,8 @@ import renderPipelinesData from "@/assets/data/renderPipelines.json"
 import streamsData from "@/assets/data/streams.json"
 import projectsData from "@/assets/data/projects_main.json"
 
+import _ from 'lodash'
+
 export default {
     name: "HomePage",
     data: () => ({
@@ -219,6 +221,14 @@ export default {
             .reverse()
           })
         )
+
+        // Search input
+        if (this.searchInput != '' && this.searchInput) {
+          tempProjects = tempProjects
+            .filter(project => {
+              return Object.values(_.pickBy(project, _.isString)).some(prop => prop.toLowerCase().includes(this.searchInput.toLowerCase()))
+          })
+        }
         
         return tempProjects
       }
