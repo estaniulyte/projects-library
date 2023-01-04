@@ -12,6 +12,7 @@
         </div>
         <div class="text-wrapper">
           <router-link
+            class="d-flex align-end pb-1"
             :to="`/project/${project.id}`"
           >
             <blockquote class="pl-4 ma-0 pb-3 title d-flex align-center">
