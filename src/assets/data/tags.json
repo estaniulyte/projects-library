@@ -273,5 +273,15 @@
     "__typename": "Tag",
     "id": 55,
     "name": "WebCam Textures"
+  },
+  {
+    "__typename": "Tag",
+    "id": 61,
+    "name": "2D Physics"
+  },
+  {
+    "__typename": "Tag",
+    "id": 90,
+    "name": "Cloth"
   }
 ]
