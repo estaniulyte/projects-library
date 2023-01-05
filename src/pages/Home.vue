@@ -93,10 +93,10 @@
       </v-row>
       <v-expand-transition>
         <v-row v-show="expand">
-          <FilterField title="Tags" :properties="tags" />
-          <FilterField title="Render Pipeline" :properties="renderPipelines" />
-          <FilterField title="Platform" :properties="platforms" />
-          <FilterField title="Unity Tech Steam" :properties="unityStreams" />
+          <FilterField title="Tags" :properties="tags" v-model="selectedTags" />
+          <FilterField title="Render Pipeline" :properties="renderPipelines" v-model="selectedRenderPipelines" />
+          <FilterField title="Platform" :properties="platforms" v-model="selectedPlatforms" />
+          <FilterField title="Unity Tech Steam" :properties="unityStreams" v-model="selectedStreams" />
         </v-row>
       </v-expand-transition>
       <v-tabs-items v-model="tab">
@@ -114,7 +114,7 @@
               md="6"
               sm="6"
             >
-              <ProjectCard :project="project"/>
+              <ProjectCard :project="project" @clickedTag="(i) => sortClickedTag(i)" />
             </v-col>
             <v-col
               class="d-flex flex-column justify-space-between align-center pt-10"
@@ -158,97 +158,141 @@ import projectsData from "@/assets/data/projects_main.json"
 import _ from 'lodash'
 
 export default {
-    name: "HomePage",
-    data: () => ({
-      orderBy: ['Most recent', 'Oldest', 'My projects', 'Favorite', 'Popular', 'Recommended'],
-      selectedOrder: 'Most recent',
-      expand: false,
-      searchInput:'',
-      tab: 'card-view',
-      tags: tagsData,
-      platforms: platformsData,
-      renderPipelines: renderPipelinesData,
-      unityStreams: streamsData,
-      projects: projectsData
-    }),
-    components: {
-      HomeAppBar,
-      FilterField,
-      ProjectCard,
-      ProjectsTable
-    },
-    computed: {
-      filteredProjects: function() {
-        let tempProjects = this.projects
+  name: "HomePage",
+  data: () => ({
+    orderBy: ['Most recent', 'Oldest', 'My projects', 'Favorite', 'Popular', 'Recommended'],
+    selectedOrder: 'Most recent',
+    expand: false,
+    searchInput:'',
+    tab: 'card-view',
+    tags: tagsData,
+    platforms: platformsData,
+    renderPipelines: renderPipelinesData,
+    unityStreams: streamsData,
+    projects: projectsData,
+    selectedTags: [],
+    selectedRenderPipelines: [],
+    selectedPlatforms: [],
+    selectedStreams: [],
+  }),
+  components: {
+    HomeAppBar,
+    FilterField,
+    ProjectCard,
+    ProjectsTable
+  },
+  computed: {
+    filteredProjects: function() {
+      let tempProjects = this.projects
 
-        // add allTags and verifiedVersions properties, sort by most recent
-        tempProjects = tempProjects
-        .map(
-          (item) => ({
-            ...item,
-            allTags: [
-              ...item.renderPipelines.map(
-                (item) => ({
-                  ...item,
-                  type: "RenderPipeline"
-                })
-              ),
-              ...item.primaryTags.map(
-                (item) => ({
-                  ...item,
-                  type: "PrimaryTag"
-                })
-              ),
-              ...item.tags,
-            ],
-            verifiedVersions: [
-              item.unityStreamVersion,
-              ...item.testedVersions
-                .filter (
-                  (prop) => {
-                    if (prop.status === 'PASS')
-                    return prop
-                  }
-                )
-                .map (
-                  (prop) => {
-                    return prop.stream
-                  }
-                )
-            ]
-            .map(
+      // add allTags and verifiedVersions properties, sort by most recent
+      tempProjects = tempProjects
+      .map(
+        (item) => ({
+          ...item,
+          allTags: [
+            ...item.renderPipelines.map(
               (item) => ({
                 ...item,
-                metadata: item.name
-                  .split('.')
-                  .map(
-                    (number) => {
-                      return parseInt(number)
-                    }
-                  )
+                type: "RenderPipeline"
               })
-            )
-            .sort(
-              (a, b) => {
-                return a.metadata[0] - b.metadata[0] || a.metadata[1] - b.metadata[1]
-              }
-            )
-            .reverse()
-          })
-        )
+            ),
+            ...item.primaryTags.map(
+              (item) => ({
+                ...item,
+                type: "PrimaryTag"
+              })
+            ),
+            ...item.tags,
+          ],
+          verifiedVersions: [
+            item.unityStreamVersion,
+            ...item.testedVersions
+              .filter (
+                (prop) => {
+                  if (prop.status === 'PASS')
+                  return prop
+                }
+              )
+              .map (
+                (prop) => {
+                  return prop.stream
+                }
+              )
+          ]
+          .map(
+            (item) => ({
+              ...item,
+              metadata: item.name
+                .split('.')
+                .map(
+                  (number) => {
+                    return parseInt(number)
+                  }
+                )
+            })
+          )
+          .sort(
+            (a, b) => {
+              return a.metadata[0] - b.metadata[0] || a.metadata[1] - b.metadata[1]
+            }
+          )
+          .reverse()
+        })
+      )
 
-        // Search input
-        if (this.searchInput != '' && this.searchInput) {
-          tempProjects = tempProjects
-            .filter(project => {
-              return Object.values(_.pickBy(project, _.isString)).some(prop => prop.toLowerCase().includes(this.searchInput.toLowerCase()))
-          })
-        }
-        
-        return tempProjects
+      // Search input
+      if (this.searchInput != '' && this.searchInput) {
+        tempProjects = tempProjects
+          .filter(project => {
+            return Object.values(_.pickBy(project, _.isString)).some(prop => prop.toLowerCase().includes(this.searchInput.toLowerCase()))
+        })
       }
+      
+      // Filter by tags
+      return tempProjects
+        .filter(project => {
+          return _.every(this.selectedTags, tag => {
+            return (project.allTags || []).map(selectedTag => selectedTag.id).includes(tag.id)
+          })
+        })
+        .filter(project => {
+          return _.every(this.selectedRenderPipelines, tag => {
+            return (project.allTags || []).map(selectedTag => selectedTag.id).includes(tag.id)
+          })
+        })
+        .filter(project => {
+          return _.every(this.selectedPlatforms, tag => {
+            return (project.platforms || []).map(selectedTag => selectedTag.id).includes(tag.id)
+          })
+        })
+        .filter(project => {
+          return _.every(this.selectedStreams, tag => {
+            return (project.verifiedVersions || []).map(selectedTag => selectedTag.id).includes(tag.id)
+          })
+        })
+    },
+  },
+  methods: {
+    sortClickedTag(tag) {
+      if(!this.expand) this.expand = true 
 
+      switch (tag.__typename) {
+        case 'Tag':
+          if(!_.some(this.selectedTags, tag)) this.selectedTags.push(tag)
+          break;
+        case 'Platform':
+          if(!_.some(this.selectedPlatforms, tag)) this.selectedPlatforms.push(tag)
+          break;
+        case 'RenderPipeline':
+          if(!_.some(this.selectedRenderPipelines, tag)) this.selectedRenderPipelines.push(tag)
+          break;
+        case 'UnityStream':
+          if(!_.some(this.selectedStreams, tag)) this.selectedStreams.push(tag)
+          break;
+      }
     }
+  },
 }
 </script>
 

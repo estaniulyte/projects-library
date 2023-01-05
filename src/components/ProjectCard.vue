@@ -46,9 +46,9 @@
       </div>
     </article>
     <div class="px-3 py-2">
-      <ProjectCardSlider name="Tags" :tags="project.allTags" />
-      <ProjectCardSlider name="Platform" :tags="project.platforms" />
-      <ProjectCardSlider name="Verified Versions" :tags="project.verifiedVersions" />
+      <ProjectCardSlider name="Tags" :tags="project.allTags" @filterBy="(tag) => $emit('clickedTag', tag)" />
+      <ProjectCardSlider name="Platform" :tags="project.platforms" @filterBy="(tag) => $emit('clickedTag', tag)" />
+      <ProjectCardSlider name="Verified Versions" :tags="project.verifiedVersions" @filterBy="(tag) => $emit('clickedTag', tag)" />
     </div>
   </v-card>
 </template>

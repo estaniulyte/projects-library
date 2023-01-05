@@ -17,6 +17,7 @@
         <v-chip
           class="black--text pa-2 mx-1 defaultChip"
           :class="{ renderPipeline: tag.type === 'RenderPipeline', primaryTag: tag.type === 'PrimaryTag' }"
+          @click="$emit('filterBy', tag)"
           pill
           label
           x-small

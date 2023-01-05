@@ -13,6 +13,7 @@
     <v-row>
       <v-autocomplete
         :items="properties"
+        v-model="selectedItems"
         class="transition-swing py-2 field"
         filled
         item-value="id"
@@ -43,10 +44,20 @@ export default {
       type: String,
       default: null
     },
-    selectedItems: {
+    value: {
       type: Array,
-      default: null
-    }
+      default: () => ([])
+    },
+  },
+  computed: {
+    selectedItems: {
+      get () {
+        return this.value
+      },
+      set (value) {
+        this.$emit('input', value)
+      }
+    },
   },
 	data: () => ({
 	})
