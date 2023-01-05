@@ -155,8 +155,6 @@ import renderPipelinesData from "@/assets/data/renderPipelines.json"
 import streamsData from "@/assets/data/streams.json"
 import projectsData from "@/assets/data/projects_main.json"
 
-import _ from 'lodash'
-
 export default {
   name: "HomePage",
   data: () => ({
@@ -245,29 +243,29 @@ export default {
       if (this.searchInput != '' && this.searchInput) {
         tempProjects = tempProjects
           .filter(project => {
-            return Object.values(_.pickBy(project, _.isString)).some(prop => prop.toLowerCase().includes(this.searchInput.toLowerCase()))
+            return Object.values(this._.pickBy(project, this._.isString)).some(prop => prop.toLowerCase().includes(this.searchInput.toLowerCase()))
         })
       }
       
       // Filter by tags
       return tempProjects
         .filter(project => {
-          return _.every(this.selectedTags, tag => {
+          return this._.every(this.selectedTags, tag => {
             return (project.allTags || []).map(selectedTag => selectedTag.id).includes(tag.id)
           })
         })
         .filter(project => {
-          return _.every(this.selectedRenderPipelines, tag => {
+          return this._.every(this.selectedRenderPipelines, tag => {
             return (project.allTags || []).map(selectedTag => selectedTag.id).includes(tag.id)
           })
         })
         .filter(project => {
-          return _.every(this.selectedPlatforms, tag => {
+          return this._.every(this.selectedPlatforms, tag => {
             return (project.platforms || []).map(selectedTag => selectedTag.id).includes(tag.id)
           })
         })
         .filter(project => {
-          return _.every(this.selectedStreams, tag => {
+          return this._.every(this.selectedStreams, tag => {
             return (project.verifiedVersions || []).map(selectedTag => selectedTag.id).includes(tag.id)
           })
         })
@@ -279,16 +277,16 @@ export default {
 
       switch (tag.__typename) {
         case 'Tag':
-          if(!_.some(this.selectedTags, tag)) this.selectedTags.push(tag)
+          if(!this._.some(this.selectedTags, tag)) this.selectedTags.push(tag)
           break;
         case 'Platform':
-          if(!_.some(this.selectedPlatforms, tag)) this.selectedPlatforms.push(tag)
+          if(!this._.some(this.selectedPlatforms, tag)) this.selectedPlatforms.push(tag)
           break;
         case 'RenderPipeline':
-          if(!_.some(this.selectedRenderPipelines, tag)) this.selectedRenderPipelines.push(tag)
+          if(!this._.some(this.selectedRenderPipelines, tag)) this.selectedRenderPipelines.push(tag)
           break;
         case 'UnityStream':
-          if(!_.some(this.selectedStreams, tag)) this.selectedStreams.push(tag)
+          if(!this._.some(this.selectedStreams, tag)) this.selectedStreams.push(tag)
           break;
       }
     }

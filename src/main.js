@@ -4,7 +4,12 @@ import vuetify from './plugins/vuetify'
 
 import router from './router'
 
+import VueLodash from 'vue-lodash'
+import lodash from 'lodash'
+
 Vue.config.productionTip = false
+
+Vue.use(VueLodash, { lodash })
 
 new Vue({
   router,
