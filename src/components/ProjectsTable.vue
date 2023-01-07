@@ -44,6 +44,7 @@
           class="defaultChip"
           v-for="tag, i in item.allTags"
           :class="{ renderPipeline: tag.type === 'RenderPipeline', primaryTag: tag.type === 'PrimaryTag' }"
+          @click="$emit('filterBy', tag)"
           :key="i"
           pill
           label
@@ -62,6 +63,7 @@
         <v-chip
           v-for="platform in item.platforms"
           :key="platform.id"
+          @click="$emit('filterBy', platform)"
           pill
           label
           color="grey lighten-2"
@@ -80,6 +82,7 @@
         <v-chip
           v-for="version in item.verifiedVersions"
           :key="version.id"
+          @click="$emit('filterBy', version)"
           pill
           label
           color="grey lighten-2"

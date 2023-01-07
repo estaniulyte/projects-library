@@ -136,7 +136,7 @@
         <v-tab-item
           value="table-view"
         >
-          <ProjectsTable :projects="filteredProjects" />
+          <ProjectsTable :projects="filteredProjects" @filterBy="(i) => sortClickedTag(i)" />
         </v-tab-item>
       </v-tabs-items>
     </div>
