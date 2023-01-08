@@ -1,7 +1,7 @@
 <template>
   <div>
     <HomeAppBar />
-    <div v-if="project">
+    <div v-if="project" class="project-content">
       <ProjectBanner :project="project" />
     </div>
   </div>
@@ -30,5 +30,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.project-content {
+  max-width: 1500px;
+  // max-width: 1200px;
+  margin: auto;  
+}
 </style>
