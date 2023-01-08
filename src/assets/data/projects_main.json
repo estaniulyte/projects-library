@@ -83,5 +83,145 @@
       }
     ],
     "favoredBy": []
+  },
+  {
+    "__typename": "Project",
+    "id": "41c55027-b884",
+    "name": "Dragon Crashers",
+    "link": "https://assetstore.unity.com/packages/essentials/tutorial-projects/dragon-crashers-2d-sample-project-190721",
+    "imageLink": "https://assetstorev1-prd-cdn.unity3d.com/key-image/dc8d2c29-e4e3-400d-a01b-19db749de003.webp",
+    "created": "2021-03-21T06:49:25.000Z",
+    "recommended": false,
+    "unityStreamVersion": {
+      "__typename": "UnityStream",
+      "id": 19,
+      "name": "2020.3"
+    },
+    "platforms": [
+      {
+        "__typename": "Platform",
+        "id": 1,
+        "name": "Android"
+      },
+      {
+        "__typename": "Platform",
+        "id": 3,
+        "name": "iOS"
+      },
+      {
+        "__typename": "Platform",
+        "id": 8,
+        "name": "Mobile"
+      },
+      {
+        "__typename": "Platform",
+        "id": 9,
+        "name": "MacOS"
+      }
+    ],
+    "renderPipelines": [
+      {
+        "__typename": "RenderPipeline",
+        "id": 4,
+        "name": "2D RP"
+      }
+    ],
+    "testedVersions": [
+      {
+        "__typename": "TestedVersion",
+        "id": 6,
+        "stream": {
+          "__typename": "UnityStream",
+          "id": 23,
+          "name": "2023.1"
+        },
+        "status": "PASS"
+      }
+    ],
+    "tags": [
+      {
+        "__typename": "Tag",
+        "id": 19,
+        "name": "Demo"
+      },
+      {
+        "__typename": "Tag",
+        "id": 13,
+        "name": "2D"
+      }
+    ],
+    "primaryTags": [
+      {
+        "__typename": "Tag",
+        "id": 18,
+        "name": "2D Lights"
+      },
+      {
+        "__typename": "Tag",
+        "id": 61,
+        "name": "2D Physics"
+      }
+    ],
+    "favoredBy": []
+  },
+  {
+    "__typename": "Project",
+    "id": "41c5502437-b884",
+    "name": "Viking Village URP",
+    "link": "https://assetstore.unity.com/packages/essentials/tutorial-projects/viking-village-urp-29140",
+    "imageLink": "https://assetstorev1-prd-cdn.unity3d.com/key-image/a6587a98-62df-4b0f-a441-ce33836990e8.webp",
+    "created": "2021-03-22T06:49:25.000Z",
+    "recommended": false,
+    "unityStreamVersion": {
+      "__typename": "UnityStream",
+      "id": 14,
+      "name": "2019.4"
+    },
+    "platforms": [
+      {
+        "__typename": "Platform",
+        "id": 2,
+        "name": "Standalone"
+      },
+      {
+        "__typename": "Platform",
+        "id": 9,
+        "name": "MacOS"
+      }
+    ],
+    "renderPipelines": [
+      {
+        "__typename": "RenderPipeline",
+        "id": 2,
+        "name": "Universal RP"
+      }
+    ],
+    "testedVersions": [
+      {
+        "__typename": "TestedVersion",
+        "id": 6,
+        "stream": {
+          "__typename": "UnityStream",
+          "id": 23,
+          "name": "2023.1"
+        },
+        "status": "PASS"
+      }
+    ],
+    "tags": [
+      {
+        "__typename": "Tag",
+        "id": 12,
+        "name": "3D"
+      }
+    ],
+    "primaryTags": [
+      {
+        "__typename": "Tag",
+        "id": 19,
+        "name": "Demo"
+      }
+    ],
+    "favoredBy": []
   }
 ]
