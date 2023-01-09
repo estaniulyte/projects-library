@@ -66,12 +66,16 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep .theme--light.v-text-field--filled > .v-input__control > .v-input__slot{
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.02);
   padding: 4px 0x;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05)!important;
+  }
 }
 
 ::v-deep .theme--light.v-chip:not(.v-chip--active) {
-  background: #e1e8e5;
+  background: #d5f3de;
   margin: 4px;
 }
 
