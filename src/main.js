@@ -7,6 +7,10 @@ import router from './router'
 import VueLodash from 'vue-lodash'
 import lodash from 'lodash'
 
+import VueMoment from 'vue-moment'
+
+Vue.use(VueMoment)
+
 Vue.config.productionTip = false
 
 Vue.use(VueLodash, { lodash })
