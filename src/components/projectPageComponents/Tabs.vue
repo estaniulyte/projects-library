@@ -17,14 +17,39 @@
         </v-tabs>
       </v-col>
     </v-row>
+    <v-tabs-items v-model="tab">
+      <v-tab-item
+        value="overview"
+      >
+        ProjectOverview
+      </v-tab-item>
+      <v-tab-item
+        value="owners"
+      >
+        ProjectOwners
+      </v-tab-item>
+      <v-tab-item
+        value="tested-versions"
+      >
+        <ProjectTestedVersions :versions="project.testedVersions" :sourceVersion="project.unityVersion"/>
+      </v-tab-item>
+      <v-tab-item value="project-bugs">
+        ProjectBugs
+      </v-tab-item>
+    </v-tabs-items>
   </div>
 </template>
 
 <script>
+import ProjectTestedVersions from '@/components/projectPageComponents/TestedVersions.vue'
+
 export default {
   name: "ProjectTabs",
   props: {
     project: {}
+  },
+  components: {
+    ProjectTestedVersions
   },
   data: () => ({
     tab: "#overview",
