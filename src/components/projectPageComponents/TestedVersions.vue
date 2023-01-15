@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="d-flex">
+      <TestedVersionInformation v-model="showInformation" :item="clickedItem" />
       <v-row class="ma-2 d-flex align-center">
         <v-chip
           class="mr-2 my-2 py-5 px-3 white--text"
@@ -29,11 +30,26 @@
 </template>
 
 <script>
+import TestedVersionInformation from '@/components/projectPageComponents/TestedVersionInformation.vue'
+
 export default {
   name: "ProjectTestedVersions",
+  components: {
+    TestedVersionInformation
+  },
   props: {
     versions: {},
     sourceVersion: {},
+  },
+  data: () => ({
+    showInformation: false,
+    clickedItem: {}
+  }),
+  methods: {
+    showItemInfo (item) {
+      this.clickedItem = item
+      this.showInformation = true
+    }
   },
   computed: {
     sortedVersions: function() {
