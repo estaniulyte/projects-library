@@ -9,11 +9,15 @@
     <template
       v-slot:[`item.imageLink`]="{ item }"
     >
-      <v-img
-        class="table-img"
-        :src="item.imageLink"
-        max-width="140"
-      />
+      <router-link
+        :to="`/project/${item.id}`"
+      >
+        <v-img
+          class="table-img"
+          :src="item.imageLink"
+          max-width="140"
+        />
+      </router-link>
     </template>
     <template
       v-slot:[`item.name`]="{ item }"
