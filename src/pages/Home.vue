@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="mb-7">
     <HomeAppBar />
     <div class="background-bar" />
     <v-row class="d-flex justify-center">
