@@ -21,7 +21,7 @@
       <v-tab-item
         value="overview"
       >
-        ProjectOverview
+        <ProjectOverview />
       </v-tab-item>
       <v-tab-item
         value="owners"
@@ -42,6 +42,7 @@
 
 <script>
 import ProjectTestedVersions from '@/components/projectPageComponents/TestedVersions.vue'
+import ProjectOverview from '@/components/projectPageComponents/Overview.vue'
 
 export default {
   name: "ProjectTabs",
@@ -49,7 +50,8 @@ export default {
     project: {}
   },
   components: {
-    ProjectTestedVersions
+    ProjectTestedVersions,
+    ProjectOverview
   },
   data: () => ({
     tab: "#overview",
