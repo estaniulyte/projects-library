@@ -347,4 +347,8 @@ export default {
 .message-text {
   font-size: 1.5rem!important;
 }
+
+.sortField {
+  z-index: 21;
+}
 </style>
