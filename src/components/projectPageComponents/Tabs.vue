@@ -21,7 +21,7 @@
       <v-tab-item
         value="overview"
       >
-        <ProjectOverview />
+        <ProjectOverview :project="project" />
       </v-tab-item>
       <v-tab-item
         value="owners"
