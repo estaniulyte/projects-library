@@ -5,6 +5,7 @@
     "name": "Boat Attack",
     "link": "https://github.com/Unity-Technologies/BoatAttack",
     "imageLink": "https://repository-images.githubusercontent.com/121281189/25a0e400-bda7-11e9-8961-48675648aabc",
+    "unityVersion": "2018.3.0f4",
     "created": "2021-03-22T06:49:25.000Z",
     "recommended": false,
     "unityStreamVersion": {
@@ -99,6 +100,7 @@
     "name": "Dragon Crashers",
     "link": "https://assetstore.unity.com/packages/essentials/tutorial-projects/dragon-crashers-2d-sample-project-190721",
     "imageLink": "https://assetstorev1-prd-cdn.unity3d.com/key-image/dc8d2c29-e4e3-400d-a01b-19db749de003.webp",
+    "unityVersion": "2020.2.0f2",
     "created": "2021-03-21T06:49:25.000Z",
     "recommended": false,
     "unityStreamVersion": {
@@ -188,6 +190,7 @@
     "name": "Viking Village URP",
     "link": "https://assetstore.unity.com/packages/essentials/tutorial-projects/viking-village-urp-29140",
     "imageLink": "https://assetstorev1-prd-cdn.unity3d.com/key-image/a6587a98-62df-4b0f-a441-ce33836990e8.webp",
+    "unityVersion": "2019.4.5f1",
     "created": "2021-03-22T06:49:25.000Z",
     "recommended": false,
     "unityStreamVersion": {
