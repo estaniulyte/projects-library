@@ -4,6 +4,7 @@
     <div v-if="project" class="project-content">
       <ProjectBanner :project="project" />
       <ProjectTabs :project="project" />
+      <ProjectComments />
     </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
 import HomeAppBar from '@/components/HomeAppBar.vue'
 import ProjectBanner from '@/components/projectPageComponents/Banner.vue'
 import ProjectTabs from '@/components/projectPageComponents/Tabs.vue'
+import ProjectComments from '@/components/projectPageComponents/Comments.vue'
 
 import projectsData from "@/assets/data/projects_detailed.json"
 
@@ -24,7 +26,8 @@ export default {
     components: { 
       HomeAppBar,
       ProjectBanner,
-      ProjectTabs
+      ProjectTabs,
+      ProjectComments
     },
     created () {
       this.project = this.projects.find((e) => e.id === this.$route.params.id)
