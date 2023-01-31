@@ -11,7 +11,22 @@
 </template>
 
 <script>
+import MarkdownIt from 'markdown-it'
+
 export default {
   name: "ProjectComments",
+  props: {
+    comments: [],
+  },
+  methods: {
+    markdownToHtml(text) {
+      var md = new MarkdownIt({
+        html: true,
+        linkify: true,
+        typographer: true
+      });
+      return (text) ? md.render(text) : ""
+    },
+  }
 }
 </script>

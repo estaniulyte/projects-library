@@ -4,7 +4,7 @@
     <div v-if="project" class="project-content">
       <ProjectBanner :project="project" />
       <ProjectTabs :project="project" />
-      <ProjectComments />
+      <ProjectComments :comments="project.comments" />
     </div>
   </div>
 </template>
