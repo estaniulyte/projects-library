@@ -5,7 +5,7 @@
     outlined
     min-height="455px"
   >
-    <article class="parent-container">
+    <article class="parent-container" @click.self="redirectToProject" >
       <div class="content-wrapper">
         <div class="image-wrapper">
             <img :src="project.imageLink" alt="projectImage" />
@@ -71,6 +71,9 @@ export default {
     async copyLink(link) {
       await navigator.clipboard.writeText(link);
       // alert('Project`s "' + link + '" link copied')
+    },
+    redirectToProject () {
+      this.$router.push(`/project/${this.project.id}`)
     },
     setLinkIcon(link) {
       if (link.includes("github")) {
