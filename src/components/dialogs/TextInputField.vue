@@ -6,7 +6,7 @@
       class="ma-0 pa-1 input px-0"
       :label="label"
       :placeholder="label"
-      :rules="nameRules"
+      :rules="rules"
       required
       hide-details
       single-line
@@ -23,6 +23,7 @@ export default {
   props: {
     title: String,
     label: String,
+    rules: [],
     required: {
       type: Boolean,
       default: false
@@ -31,9 +32,6 @@ export default {
   data () {
     return {
       name: "",
-      nameRules: [
-        v => !!v || 'E-mail is required',
-      ]
     }
   }
 }

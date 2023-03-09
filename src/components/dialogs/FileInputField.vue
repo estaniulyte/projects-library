@@ -8,6 +8,7 @@
     </div>
     <v-file-input
       class="ma-0 pa-1 input px-0"
+      :rules="rules"
       prepend-icon=""
       accept="image/png, image/jpeg"
       hide-details
@@ -47,6 +48,7 @@ export default {
     title: String,
     label: String,
     additionalInfo: String,
+    rules: [],
     required: {
       type: Boolean,
       default: false

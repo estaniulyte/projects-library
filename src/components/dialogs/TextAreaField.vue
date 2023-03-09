@@ -16,6 +16,7 @@
       class="ma-0 pa-1 input px-0"
       :label="label"
       :placeholder="label"
+      :rules="rules"
       rows="3"
       hide-details
       single-line
@@ -33,6 +34,7 @@ export default {
   props: {
     title: String,
     label: String,
+    rules: [],
     additionalInfo: String,
     required: {
       type: Boolean,

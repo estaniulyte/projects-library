@@ -5,6 +5,7 @@
       class="ma-0 pa-1 input px-0"
       :label="label"
       :placeholder="label"
+      :rules="rules"
       hide-details
       single-line
       justify-sm
@@ -20,6 +21,7 @@ export default {
   props: {
     title: String,
     label: String,
+    rules: [],
     required: {
       type: Boolean,
       default: false
