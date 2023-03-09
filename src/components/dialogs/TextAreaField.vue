@@ -68,4 +68,12 @@ export default {
 ::v-deep .v-textarea textarea{
   line-height: 1rem!important;
 }
+
+::v-deep .v-textarea textarea{
+  line-height: 1rem!important;
+}
+
+::v-deep .v-field--error, ::v-deep .error--text {
+  background-color: rgb(251, 192, 192);
+}
 </style>
