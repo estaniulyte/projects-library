@@ -6,6 +6,7 @@
       :label="label"
       :placeholder="label"
       :rules="rules"
+      :required="required"
       hide-details
       single-line
       justify-sm

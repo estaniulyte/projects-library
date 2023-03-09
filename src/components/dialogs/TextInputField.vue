@@ -7,7 +7,7 @@
       :label="label"
       :placeholder="label"
       :rules="rules"
-      required
+      :required="required"
       hide-details
       single-line
       justify-sm

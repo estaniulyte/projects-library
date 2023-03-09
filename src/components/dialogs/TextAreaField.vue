@@ -17,6 +17,7 @@
       :label="label"
       :placeholder="label"
       :rules="rules"
+      :required="required"
       rows="3"
       hide-details
       single-line

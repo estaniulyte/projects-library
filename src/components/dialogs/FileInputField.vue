@@ -9,6 +9,7 @@
     <v-file-input
       class="ma-0 pa-1 input px-0"
       :rules="rules"
+      :required="required"
       prepend-icon=""
       accept="image/png, image/jpeg"
       hide-details
