@@ -20,22 +20,22 @@
           v-model="valid"
         >
           <div class="d-flex flex-column justify-start mb-3">
-            <TextInputField title="Title" label="Project name" class="my-2" :required="true" :rules="titleRules" />
-            <TextInputField title="Link" label="https//github.com/project-link" class="my-2" :required="true" :rules="linkRules" />
+            <TextInputField title="Title" label="Project name" class="my-2" :required="true" :rules="titleRules" v-model="name" />
+            <TextInputField title="Link" label="https//github.com/project-link" class="my-2" :required="true" :rules="linkRules" v-model="link" />
             <div class="d-flex flex-row">
-              <SelectInputField title="Render Pipeline" label="Select Render Pipelines" class="my-2 mr-2" :required="true"  :rules="renderPipelineRules" />
-              <SelectInputField title="Platform" label="Select supported platforms" class="my-2" :required="true" :rules="platformRules" />
+              <SelectInputField title="Render Pipeline" label="Select Render Pipelines" class="my-2 mr-2" :required="true"  :rules="renderPipelineRules" v-model="selectedRenderPipelines" />
+              <SelectInputField title="Platform" label="Select supported platforms" class="my-2" :required="true" :rules="platformRules" v-model="selectedPlatforms" />
             </div>
-            <SelectInputField title="Project owners" label="Select owners" class="my-2" />
+            <SelectInputField title="Project owners" label="Select owners" class="my-2" v-model="selectedOwners" />
             <div class="d-flex flex-row">
-              <SelectInputField title="Primary Features" label="Select up to 5" class="my-2 mr-2" :required="true" :rules="tagsRules" />
-              <SelectInputField title="Features" label="Other project features" class="my-2" />
+              <SelectInputField title="Primary Features" label="Select up to 5" class="my-2 mr-2" :required="true" :rules="tagsRules" v-model="selectedPrimaryTags" />
+              <SelectInputField title="Features" label="Other project features" class="my-2" v-model="selectedTags" />
             </div>
             <div class="d-flex flex-row">
-              <SelectInputField title="Project version in source" label="Select Unity Stream" class="my-2 mr-2" :required="true" :rules="unityStreamRules" />
-              <TextInputField title="Unity version" label="E.g. 0f12" class="my-2" :required="true" :rules="unityVersionRules" />
+              <SelectInputField title="Project version in source" label="Select Unity Stream" class="my-2 mr-2" :required="true" :rules="unityStreamRules" v-model="selectedUnityVersion" />
+              <TextInputField title="Unity version" label="E.g. 0f12" class="my-2" :required="true" :rules="unityVersionRules" v-model="unityVersion" />
             </div>
-            <TextAreaField title="Description" label="Plain text or markdown" class="my-2" additionalInfo="Paste template" />
+            <TextAreaField title="Description" label="Plain text or markdown" class="my-2" additionalInfo="Paste template" v-model="description" />
             <FileInputField title="Project cover image" label="Plain text or markdown" additionalInfo="max size 2MB" class="my-2" :rules="imageRules" />
           </div>
         </v-form>
@@ -74,6 +74,16 @@ export default {
     data: () => ({
       loading: false,
       valid: false,
+      name: null,
+      link: null,
+      selectedRenderPipelines: [],
+      selectedOwners: [],
+      selectedPlatforms: [],
+      selectedPrimaryTags: [],
+      selectedTags: [],
+      selectedUnityVersion: null,
+      unityVersion: null,
+      description: null,
       titleRules: [
         v => v !== ' ' || 'Name is required',
         v => v !== null || 'Name is required',
