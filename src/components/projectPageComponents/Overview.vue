@@ -37,10 +37,17 @@
         </div>
       </v-col>
     </v-row>
+    <v-row v-if="project.description" class="pb-4">
+      <v-col cols="12" class="mx-1 description-container">
+        <div v-html="markdownToHtml(project.description)" class="description"></div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
+import MarkdownIt from 'markdown-it'
+
 export default {
   name: "ProjectOverview",
   props: {
@@ -63,6 +70,50 @@ export default {
       else
         return "Source page";
     },
+    markdownToHtml(text) {
+      var md = new MarkdownIt({
+        html: true,
+        linkify: true,
+        typographer: true
+      });
+      return (text) ? md.render(text) : ""
+   },
   }
 }
 </script>
+
+
+<style scoped lang="scss">
+.description-container {
+  border-radius: 5px;
+  margin: 10px;
+  background-color: rgb(247, 247, 247);
+
+  .description {
+    // white-space: break-spaces;
+    width: 90%;
+    font-size: 1rem;
+    padding:  15px;
+
+    ::v-deep h2{
+      padding: 10px 0 3px 0!important;
+    }
+
+    ::v-deep h3{
+      padding: 7px 0 3px 0!important;
+    }
+
+    ::v-deep h4{
+      padding: 5px 0 2px 0!important;
+    }
+
+    ::v-deep p, ::v-deep ul {
+      margin: 0px 0px 5px 0px!important;
+    }
+
+    ::v-deep img{
+      max-height: 300px;
+    }
+  }
+}
+</style>

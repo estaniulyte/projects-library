@@ -101,6 +101,7 @@
     "link": "https://assetstore.unity.com/packages/essentials/tutorial-projects/dragon-crashers-2d-sample-project-190721",
     "imageLink": "https://assetstorev1-prd-cdn.unity3d.com/key-image/dc8d2c29-e4e3-400d-a01b-19db749de003.webp",
     "unityVersion": "2020.2.0f2",
+    "description": "The official sample project that showcases Unity’s native suite of 2D tools and graphics technology, 2D Renderer (URP).",
     "created": "2021-03-21T06:49:25.000Z",
     "recommended": false,
     "unityStreamVersion": {
@@ -190,6 +191,7 @@
     "name": "Viking Village URP",
     "link": "https://assetstore.unity.com/packages/essentials/tutorial-projects/viking-village-urp-29140",
     "imageLink": "https://assetstorev1-prd-cdn.unity3d.com/key-image/a6587a98-62df-4b0f-a441-ce33836990e8.webp",
+    "description": "3D environment created by the Unity Demo team, originally in Unity 5, that has been updated to work on Unity 2020.2 and above.",
     "unityVersion": "2019.4.5f1",
     "created": "2021-03-22T06:49:25.000Z",
     "recommended": false,
