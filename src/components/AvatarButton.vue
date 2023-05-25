@@ -15,7 +15,7 @@
       >
         <v-avatar :size=imageSize>
           <img
-            src="https://i.pravatar.cc/43"
+            :src="me.image"
             alt="Slack Image"
           >
         </v-avatar>
@@ -61,6 +61,9 @@ export default {
     }
   },
 	data: () => ({
+    me: {
+      image: "https://drive.google.com/uc?export=download&id=1SI15nBLI2MOOl95g_KyqBtjnkZTLMJJV"
+    },
     menuButtons: [
       {
         name: 'Owned projects'
