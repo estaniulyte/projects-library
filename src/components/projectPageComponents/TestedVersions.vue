@@ -2,21 +2,18 @@
   <div>
     <div class="d-flex">
       <TestedVersionInformation v-model="showInformation" :item="clickedItem" />
+      <NewTestedVersionDialog v-model="addVersion" :projectId="projectId" />
       <v-row class="ma-2 d-flex align-center">
-        <v-chip
-          class="mr-2 my-2 py-5 px-3 white--text"
-          :v-if="versions"
-          v-for="item of sortedVersions"
-          :key="item.id"
+        <v-chip class="mr-2 my-2 py-5 px-3 white--text" :v-if="versions" v-for="item of sortedVersions" :key="item.id"
           @click="showItemInfo(item)"
-          :class="{ pass: item.status === 'PASS', fail: item.status === 'ISSUES',  partly: item.status === 'WORKS_PARTLY'}"
-          label
-        >
+          :class="{ pass: item.status === 'PASS', fail: item.status === 'ISSUES', partly: item.status === 'WORKS_PARTLY' }"
+          label>
           {{ item.fullVersion }}
         </v-chip>
         <v-tooltip bottom>
           <template #activator="{ on, attrs }">
-            <v-btn fab elevation="0" small v-bind="attrs" v-on="on" color="primary" class="mx-2">
+            <v-btn @click="addVersion = true" fab elevation="0" small v-bind="attrs" v-on="on" color="primary"
+              class="mx-2">
               <v-icon size="26" color="white">
                 mdi-plus
               </v-icon>
@@ -31,11 +28,13 @@
 
 <script>
 import TestedVersionInformation from '@/components/projectPageComponents/TestedVersionInformation.vue'
+import NewTestedVersionDialog from "@/components/projectPageComponents/TestedVersionDialog.vue"
 
 export default {
   name: "ProjectTestedVersions",
   components: {
-    TestedVersionInformation
+    TestedVersionInformation,
+    NewTestedVersionDialog
   },
   props: {
     versions: {},
@@ -43,19 +42,20 @@ export default {
   },
   data: () => ({
     showInformation: false,
-    clickedItem: {}
+    clickedItem: {},
+    addVersion: false,
   }),
   methods: {
-    showItemInfo (item) {
+    showItemInfo(item) {
       this.clickedItem = item
       this.showInformation = true
     }
   },
   computed: {
-    sortedVersions: function() {
+    sortedVersions: function () {
       let tempVersions = this.versions
         .map(
-          (item) =>({
+          (item) => ({
             ...item,
             metadata: item.fullVersion
               .split('.')
@@ -80,14 +80,14 @@ export default {
 
 <style lang="scss" scoped>
 .pass {
-  background-color:#68a76b!important;
+  background-color: #68a76b !important;
 }
 
 .fail {
-  background-color:#C62828!important;
+  background-color: #C62828 !important;
 }
 
 .partly {
-  background-color: #f0a000!important;
+  background-color: #f0a000 !important;
 }
 </style>
