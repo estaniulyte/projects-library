@@ -44,6 +44,7 @@
           <v-btn
             class="text-caption text-decoration-underline text-none pa-0"
             text
+            @click="resetForm()"
           >
             Clear all
           </v-btn>
@@ -144,27 +145,33 @@ export default {
         }
       },
       filteredPrimaryTags: function() {
-      if (this.tags) {
-      let tempPrimaryTags = this.tags
-      return tempPrimaryTags
-      .filter(project => {
-          return this._.every(this.selectedTags, tag => {
-            return (project.id) !== (tag)
+        if (this.tags) {
+        let tempPrimaryTags = this.tags
+        return tempPrimaryTags
+        .filter(project => {
+            return this._.every(this.selectedTags, tag => {
+              return (project.id) !== (tag)
+            })
           })
-        })
-      } return null
+        } return null
+      },
+      filteredTags: function() {
+        if (this.tags) {
+        let tempTags = this.tags
+        return tempTags
+        .filter(project => {
+            return this._.every(this.selectedPrimaryTags, tag => {
+              return (project.id) !== (tag)
+            })
+          }) 
+        } return null
+      },
     },
-    filteredTags: function() {
-      if (this.tags) {
-      let tempTags = this.tags
-      return tempTags
-      .filter(project => {
-          return this._.every(this.selectedPrimaryTags, tag => {
-            return (project.id) !== (tag)
-          })
-        }) 
-      } return null
-    },
+    methods: {
+      resetForm () {
+        this.$refs.form.resetValidation()
+        this.$refs.form.reset()
+      }
     }
   }
 </script>
