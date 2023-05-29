@@ -23,16 +23,16 @@
             <TextInputField title="Title" label="Project name" class="my-2" :required="true" :rules="titleRules" v-model="name" />
             <TextInputField title="Link" label="https//github.com/project-link" class="my-2" :required="true" :rules="linkRules" v-model="link" />
             <div class="d-flex flex-row">
-              <SelectInputField title="Render Pipeline" label="Select Render Pipelines" class="my-2 mr-2" :required="true"  :rules="renderPipelineRules" v-model="selectedRenderPipelines" />
-              <SelectInputField title="Platform" label="Select supported platforms" class="my-2" :required="true" :rules="platformRules" v-model="selectedPlatforms" />
+              <SelectInputField title="Render Pipeline" label="Select Render Pipelines" class="my-2 mr-2" :required="true"  :rules="renderPipelineRules" v-model="selectedRenderPipelines" :items="renderPipelines" />
+              <SelectInputField title="Platform" label="Select supported platforms" class="my-2" :required="true" :rules="platformRules" v-model="selectedPlatforms" :items="platforms"  />
             </div>
             <SelectInputField title="Project owners" label="Select owners" class="my-2" v-model="selectedOwners" />
             <div class="d-flex flex-row">
-              <SelectInputField title="Primary Features" label="Select up to 5" class="my-2 mr-2" :required="true" :rules="tagsRules" v-model="selectedPrimaryTags" />
-              <SelectInputField title="Features" label="Other project features" class="my-2" v-model="selectedTags" />
+              <SelectInputField title="Primary Features" label="Select up to 5" class="my-2 mr-2" :required="true" :rules="tagsRules" v-model="selectedPrimaryTags" :items="filteredPrimaryTags" />
+              <SelectInputField title="Features" label="Other project features" class="my-2" v-model="selectedTags" :items="filteredTags" />
             </div>
             <div class="d-flex flex-row">
-              <SelectInputField title="Project version in source" label="Select Unity Stream" class="my-2 mr-2" :required="true" :rules="unityStreamRules" v-model="selectedUnityVersion" />
+              <SelectInputField title="Project version in source" label="Select Unity Stream" class="my-2 mr-2" :required="true" :rules="unityStreamRules" v-model="selectedUnityVersion" :items="unityStreams" />
               <TextInputField title="Unity version" label="E.g. 0f12" class="my-2" :required="true" :rules="unityVersionRules" v-model="unityVersion" />
             </div>
             <TextAreaField title="Description" label="Plain text or markdown" class="my-2" additionalInfo="Paste template" v-model="description" />
@@ -69,6 +69,11 @@ import SelectInputField from '@/components/dialogs/SelectInputField.vue'
 import TextAreaField from '@/components/dialogs/TextAreaField.vue'
 import FileInputField from '@/components/dialogs/FileInputField.vue'
 
+import tagsData from "@/assets/data/tags.json"
+import platformsData from "@/assets/data/platforms.json"
+import renderPipelinesData from "@/assets/data/renderPipelines.json"
+import streamsData from "@/assets/data/streams.json"
+
 export default {
     name: "CreateProjectDialog",
     data: () => ({
@@ -76,6 +81,10 @@ export default {
       valid: false,
       name: null,
       link: null,
+      tags: tagsData,
+      platforms: platformsData,
+      renderPipelines: renderPipelinesData,
+      unityStreams: streamsData,
       selectedRenderPipelines: [],
       selectedOwners: [],
       selectedPlatforms: [],
@@ -134,8 +143,30 @@ export default {
           this.$emit('input', value)
         }
       },
+      filteredPrimaryTags: function() {
+      if (this.tags) {
+      let tempPrimaryTags = this.tags
+      return tempPrimaryTags
+      .filter(project => {
+          return this._.every(this.selectedTags, tag => {
+            return (project.id) !== (tag)
+          })
+        })
+      } return null
+    },
+    filteredTags: function() {
+      if (this.tags) {
+      let tempTags = this.tags
+      return tempTags
+      .filter(project => {
+          return this._.every(this.selectedPrimaryTags, tag => {
+            return (project.id) !== (tag)
+          })
+        }) 
+      } return null
+    },
+    }
   }
-}
 </script>
 
 <style lang="scss" scoped>
