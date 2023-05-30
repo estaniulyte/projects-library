@@ -13,7 +13,7 @@
         >
           <div class="d-flex flex-column justify-start mb-3">
             <div class="d-flex flex-row">
-              <SelectInputField title="Project version in source" label="Select Unity Stream" class="my-2 mr-2" :required="true" :multiple="false" :items="unityStream" v-model="selectedUnityVersion" :rules="unityStreamRules" />
+              <SelectInputField title="Project version in source" label="Select Unity Stream" class="my-2 mr-2" :required="true" :multiple="false" :items="unityStreams" v-model="selectedUnityVersion" :rules="unityStreamRules" />
               <TextInputField title="Unity version" label="E.g. 0f12" class="my-2" :required="true" :rules="unityVersionRules" v-model="unityVersion" />
             </div>
             <SelectInputField title="Status" label="Select status" class="my-2 mr-2" :required="true" :multiple="false" :rules="statusRules" :items="statuses" v-model="selectedStatus" />
@@ -51,10 +51,13 @@ import SelectInputField from '@/components/dialogs/SelectInputField.vue'
 import TextInputField from '@/components/dialogs/TextInputField.vue'
 import TextAreaField from '@/components/dialogs/TextAreaField.vue'
 
+import streamsData from "@/assets/data/streams.json"
+
 export default {
   name: "TestedVersionDialog",
   data: () => ({
     valid: false,
+    unityStreams: streamsData,
     description: null,
     selectedStatus: null,
     selectedUnityVersion: null,
