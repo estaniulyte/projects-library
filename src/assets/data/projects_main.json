@@ -298,5 +298,80 @@
       }
     ],
     "favoredBy": []
+  },
+  {
+    "__typename": "Project",
+    "id": "41c55023537-b82k4",
+    "name": "Adam",
+    "link": "https://assetstore.unity.com/packages/3d/characters/adam-character-pack-adam-guard-lu-74842",
+    "imageLink": "https://unity.com/sites/default/files/styles/16_9_l/public/2021-07/Adam%20Video%20Preview.jpg?itok=KLhsr9Jd",
+    "created": "2021-03-22T06:49:25.000Z",
+    "recommended": false,
+    "unityStreamVersion": {
+      "__typename": "UnityStream",
+      "id": 21,
+      "name": "2022.2"
+    },
+    "platforms": [
+      {
+        "__typename": "Platform",
+        "id": 2,
+        "name": "Standalone"
+      },
+      {
+        "__typename": "Platform",
+        "id": 9,
+        "name": "MacOS"
+      },
+      {
+        "__typename": "Platform",
+        "id": 7,
+        "name": "Windows"
+      }
+    ],
+    "renderPipelines": [
+      {
+        "__typename": "RenderPipeline",
+        "id": 3,
+        "name": "Built-In"
+      }
+    ],
+    "testedVersions": [
+      {
+        "__typename": "TestedVersion",
+        "id": 6,
+        "stream": {
+          "__typename": "UnityStream",
+          "id": 23,
+          "name": "2023.1"
+        },
+        "status": "PASS"
+      }
+    ],
+    "tags": [
+      {
+        "__typename": "Tag",
+        "id": 12,
+        "name": "3D"
+      },
+      {
+        "__typename": "Tag",
+        "id": 14,
+        "name": "Audio"
+      },
+      {
+        "__typename": "Tag",
+        "id": 20,
+        "name": "Models"
+      }
+    ],
+    "primaryTags": [
+      {
+        "__typename": "Tag",
+        "id": 19,
+        "name": "Demo"
+      }
+    ],
+    "favoredBy": []
   }
 ]
