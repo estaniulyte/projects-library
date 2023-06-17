@@ -223,5 +223,80 @@
       }
     ],
     "favoredBy": []
+  },
+  {
+    "__typename": "Project",
+    "id": "41c5502437-b82k4",
+    "name": "Book of the Dead",
+    "link": "https://assetstore.unity.com/packages/essentials/tutorial-projects/book-of-the-dead-environment-hdrp-121175",
+    "imageLink": "https://i.ytimg.com/vi/DDsRfbfnC_A/sddefault.jpg",
+    "created": "2021-03-22T06:49:25.000Z",
+    "recommended": false,
+    "unityStreamVersion": {
+      "__typename": "UnityStream",
+      "id": 14,
+      "name": "2019.4"
+    },
+    "platforms": [
+      {
+        "__typename": "Platform",
+        "id": 2,
+        "name": "Standalone"
+      },
+      {
+        "__typename": "Platform",
+        "id": 9,
+        "name": "MacOS"
+      },
+      {
+        "__typename": "Platform",
+        "id": 7,
+        "name": "Windows"
+      }
+    ],
+    "renderPipelines": [
+      {
+        "__typename": "RenderPipeline",
+        "id": 3,
+        "name": "Built-In"
+      }
+    ],
+    "testedVersions": [
+      {
+        "__typename": "TestedVersion",
+        "id": 6,
+        "stream": {
+          "__typename": "UnityStream",
+          "id": 23,
+          "name": "2023.1"
+        },
+        "status": "PASS"
+      }
+    ],
+    "tags": [
+      {
+        "__typename": "Tag",
+        "id": 12,
+        "name": "3D"
+      },
+      {
+        "__typename": "Tag",
+        "id": 14,
+        "name": "Audio"
+      },
+      {
+        "__typename": "Tag",
+        "id": 20,
+        "name": "Models"
+      }
+    ],
+    "primaryTags": [
+      {
+        "__typename": "Tag",
+        "id": 19,
+        "name": "Demo"
+      }
+    ],
+    "favoredBy": []
   }
 ]
