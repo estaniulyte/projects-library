@@ -234,8 +234,8 @@
     "recommended": false,
     "unityStreamVersion": {
       "__typename": "UnityStream",
-      "id": 14,
-      "name": "2019.4"
+      "id": 21,
+      "name": "2022.2"
     },
     "platforms": [
       {

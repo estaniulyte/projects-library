@@ -3,7 +3,7 @@
     "__typename": "Project",
     "id": "41c55027-b88",
     "name": "Boat Attack",
-    "description":"## Summary\nThis Unity project has been created to aid the testing and development of Universal RP. The project is a small vertical slice of a boat racing game, complete with race-able boats and island environment.\n\nThe demo is designed to work well on a wide variety of platforms: mid- to high-range mobile devices, all current consoles and standalone apps. \n\nMore info in the [Blog post](https://blog.unity.com/technology/achieve-beautiful-scalable-and-performant-graphics-with-the-universal-render-pipeline)\n\n## Setup\n\n\n\nTo use the demo, we suggest you install the latest version of Unity 2019.3, and then grab the project from GitHub (make sure to read the readme for usage instructions).\n\n## Project showcase:\n\n ![](https://blog-api.unity.com/sites/default/files/styles/focal_crop_ratio_16_9/public/2020/02/image14.jpg?imwidth=1920&h=dabca470&itok=KR_8EWDV) ![](https://blog-api.unity.com/sites/default/files/styles/focal_crop_ratio_16_9/public/2020/02/image1.jpg?imwidth=1920&h=8f84f51c&itok=lFcyxr1g)  ![](https://blog-api.unity.com/sites/default/files/styles/focal_crop_ratio_3_1/public/2020/02/image19.png?imwidth=2048&h=854a7be2&itok=4NeIQ6TT) ",
+    "description": "## Summary\nThis Unity project has been created to aid the testing and development of Universal RP. The project is a small vertical slice of a boat racing game, complete with race-able boats and island environment.\n\nThe demo is designed to work well on a wide variety of platforms: mid- to high-range mobile devices, all current consoles and standalone apps. \n\nMore info in the [Blog post](https://blog.unity.com/technology/achieve-beautiful-scalable-and-performant-graphics-with-the-universal-render-pipeline)\n\n## Setup\n\n\n\nTo use the demo, we suggest you install the latest version of Unity 2019.3, and then grab the project from GitHub (make sure to read the readme for usage instructions).\n\n## Project showcase:\n\n ![](https://blog-api.unity.com/sites/default/files/styles/focal_crop_ratio_16_9/public/2020/02/image14.jpg?imwidth=1920&h=dabca470&itok=KR_8EWDV) ![](https://blog-api.unity.com/sites/default/files/styles/focal_crop_ratio_16_9/public/2020/02/image1.jpg?imwidth=1920&h=8f84f51c&itok=lFcyxr1g)  ![](https://blog-api.unity.com/sites/default/files/styles/focal_crop_ratio_3_1/public/2020/02/image19.png?imwidth=2048&h=854a7be2&itok=4NeIQ6TT) ",
     "link": "https://github.com/Unity-Technologies/BoatAttack",
     "imageLink": "https://repository-images.githubusercontent.com/121281189/25a0e400-bda7-11e9-8961-48675648aabc",
     "unityVersion": "2018.3.0f4",
@@ -246,6 +246,111 @@
         "__typename": "Tag",
         "id": 12,
         "name": "3D"
+      }
+    ],
+    "primaryTags": [
+      {
+        "__typename": "Tag",
+        "id": 19,
+        "name": "Demo"
+      }
+    ],
+    "favoredBy": []
+  },
+  {
+    "__typename": "Project",
+    "id": "41c5502437-b82k4",
+    "name": "Book of the Dead",
+    "link": "https://assetstore.unity.com/packages/essentials/tutorial-projects/book-of-the-dead-environment-hdrp-121175",
+    "imageLink": "https://i.ytimg.com/vi/DDsRfbfnC_A/sddefault.jpg",
+    "description": "## Summary\nBook of the Dead demonstrates what is possible when using Unity 2018’s Scriptable Render Pipeline, which provides enhanced customizability of Unity’s rendering architecture, putting more control in the hands of the developers.\n\nMore information in the [Blog Post](https://unity.com/demos/book-of-the-dead)\n\n ## Project showcase:\n\n![](https://unity.com/sites/default/files/styles/16_9_s/public/2019-01/Cards_BookoftheDead_800x450_16_9.jpg?itok=5yyqdjas)![](https://assetstorev1-prd-cdn.unity3d.com/key-image/84860a49-77ba-4eab-b8c6-48299c14fc12.webp)![](https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/621a8de8-7656-4b1c-9530-e87fab546fb0.webp)![](https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/3179a591-da2b-452f-85fc-ec86f97273c6.webp)",
+    "unityVersion": "2022.2.9f1",
+    "created": "2021-03-22T06:49:25.000Z",
+    "recommended": false,
+    "unityStreamVersion": {
+      "__typename": "UnityStream",
+      "id": 21,
+      "name": "2022.2"
+    },
+    "platforms": [
+      {
+        "__typename": "Platform",
+        "id": 2,
+        "name": "Standalone"
+      },
+      {
+        "__typename": "Platform",
+        "id": 9,
+        "name": "MacOS"
+      },
+      {
+        "__typename": "Platform",
+        "id": 7,
+        "name": "Windows"
+      }
+    ],
+    "renderPipelines": [
+      {
+        "__typename": "RenderPipeline",
+        "id": 3,
+        "name": "Built-In"
+      }
+    ],
+    "testedVersions": [
+      {
+        "__typename": "TestedVersion",
+        "id": 11,
+        "fullVersion": "2023.1.0a4",
+        "notes": null,
+        "status": "PASS",
+        "created": "2022-07-29T09:04:34.000Z",
+        "user": {
+          "__typename": "User",
+          "name": "Harry Potter",
+          "slackId": null,
+          "slackPicture": ""
+        },
+        "stream": {
+          "__typename": "UnityStream",
+          "id": 23,
+          "name": "2023.1"
+        }
+      },
+      {
+        "__typename": "TestedVersion",
+        "id": 11,
+        "fullVersion": "2023.2.0a3",
+        "notes": "Project crashes on build.",
+        "status": "ISSUES",
+        "created": "2023-05-29T09:04:34.000Z",
+        "user": {
+          "__typename": "User",
+          "name": "Hermione Granger",
+          "slackId": null,
+          "slackPicture": ""
+        },
+        "stream": {
+          "__typename": "UnityStream",
+          "id": 23,
+          "name": "2023.1"
+        }
+      }
+    ],
+    "tags": [
+      {
+        "__typename": "Tag",
+        "id": 12,
+        "name": "3D"
+      },
+      {
+        "__typename": "Tag",
+        "id": 14,
+        "name": "Audio"
+      },
+      {
+        "__typename": "Tag",
+        "id": 20,
+        "name": "Models"
       }
     ],
     "primaryTags": [
