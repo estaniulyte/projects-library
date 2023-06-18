@@ -4,6 +4,14 @@
       <TestedVersionInformation v-model="showInformation" :item="clickedItem" />
       <NewTestedVersionDialog v-model="addVersion" :projectId="projectId" />
       <v-row class="ma-2 d-flex align-center">
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-chip class="mr-2 my-2 py-5 px-3" v-if="sourceVersion" label v-bind="attrs" v-on="on">
+              {{ sourceVersion }}
+            </v-chip>
+          </template>
+          <span>Project version in source</span>
+        </v-tooltip>
         <v-chip class="mr-2 my-2 py-5 px-3 white--text" :v-if="versions" v-for="item of sortedVersions" :key="item.id"
           @click="showItemInfo(item)"
           :class="{ pass: item.status === 'PASS', fail: item.status === 'ISSUES', partly: item.status === 'WORKS_PARTLY' }"
