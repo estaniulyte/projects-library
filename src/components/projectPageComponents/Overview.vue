@@ -7,7 +7,7 @@
         </v-row>
         <v-row>
           <v-col class="pa-0 pr-2">
-            <a :href="project.link" target="_blank">Open in {{ setLinkName(project.link)}}</a>
+            <a :href="project.link" target="_blank">Open in {{ setLinkName(project.link) }}</a>
             <v-icon class="ml-2" color="primary" small>
               mdi-open-in-new
             </v-icon>
@@ -35,6 +35,49 @@
             </v-col>
           </v-row>
         </div>
+      </v-col>
+    </v-row>
+    <v-row class="ma-2 pb-4 d-flex justify-space-between">
+      <v-col :cols="5">
+        <v-row class="py-2 subtitle-1">
+          <v-col class="pa-0 grey--text text--darken-2">
+            Tags
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="pa-0 pr-2">
+            <v-chip v-for="tag in project.allTags" :key="tag.name" class="black--text mr-1 my-1 defaultChip"
+              :class="{ primaryTag: tag.type === 'PrimaryTag' }" pill color="blue-grey" outlined label small>
+              {{ tag.name }}
+            </v-chip>
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col :cols="5">
+        <v-row class="py-2 subtitle-1 grey--text text--darken-2">
+          Platform
+        </v-row>
+        <v-row>
+          <v-col class="pa-0 pr-1">
+            <v-chip v-for="tag in project.platforms" :key="tag.name" class="black--text mr-1 my-1" pill color="green"
+              outlined label small>
+              {{ tag.name }}
+            </v-chip>
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="2">
+        <v-row class="py-2 subtitle-1 grey--text text--darken-2">
+          Render Pipeline
+        </v-row>
+        <v-row>
+          <v-col class="pa-0 pr-1">
+            <v-chip v-for="tag in project.renderPipelines" :key="tag.name" class="black--text mr-1 my-1" pill color="blue"
+              outlined label small>
+              {{ tag.name }}
+            </v-chip>
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
     <v-row v-if="project.description" class="pb-4">
@@ -77,7 +120,7 @@ export default {
         typographer: true
       });
       return (text) ? md.render(text) : ""
-   },
+    },
   }
 }
 </script>
@@ -93,27 +136,39 @@ export default {
     // white-space: break-spaces;
     width: 90%;
     font-size: 1rem;
-    padding:  15px;
+    padding: 15px;
 
-    ::v-deep h2{
-      padding: 10px 0 3px 0!important;
+    ::v-deep h2 {
+      padding: 10px 0 3px 0 !important;
     }
 
-    ::v-deep h3{
-      padding: 7px 0 3px 0!important;
+    ::v-deep h3 {
+      padding: 7px 0 3px 0 !important;
     }
 
-    ::v-deep h4{
-      padding: 5px 0 2px 0!important;
+    ::v-deep h4 {
+      padding: 5px 0 2px 0 !important;
     }
 
-    ::v-deep p, ::v-deep ul {
-      margin: 0px 0px 5px 0px!important;
+    ::v-deep p,
+    ::v-deep ul {
+      margin: 0px 0px 5px 0px !important;
     }
 
-    ::v-deep img{
+    ::v-deep img {
       max-height: 300px;
     }
   }
 }
+
+
+.defaultChip {
+    color: #455A64 !important;
+    border-color: #455A64 !important;
+  }
+
+  .primaryTag {
+    color: #dd9401 !important;
+    border-color: #f0a000 !important;
+  }
 </style>
