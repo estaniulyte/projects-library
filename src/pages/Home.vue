@@ -154,11 +154,12 @@ import platformsData from "@/assets/data/platforms.json"
 import renderPipelinesData from "@/assets/data/renderPipelines.json"
 import streamsData from "@/assets/data/streams.json"
 import projectsData from "@/assets/data/projects_main.json"
+import meData from "@/assets/data/me.json"
 
 export default {
   name: "HomePage",
   data: () => ({
-    orderBy: ['Most recent', 'Oldest', 'My projects', 'Favorite', 'Popular', 'Recommended'],
+    orderBy: ['Most recent', 'Oldest', 'My projects', 'My favorite', 'Popular', 'Recommended'],
     selectedOrder: 'Most recent',
     expand: false,
     searchInput:'',
@@ -168,6 +169,7 @@ export default {
     renderPipelines: renderPipelinesData,
     unityStreams: streamsData,
     projects: projectsData,
+    me: meData,
     selectedTags: [],
     selectedRenderPipelines: [],
     selectedPlatforms: [],
@@ -246,6 +248,21 @@ export default {
             return Object.values(this._.pickBy(project, this._.isString)).some(prop => prop.toLowerCase().includes(this.searchInput.toLowerCase()))
         })
       }
+
+      // Filter options
+      if (this.selectedOrder === 'Recommended') 
+        tempProjects = tempProjects
+          .filter( project => project.recommended === true )
+      if (this.selectedOrder === 'My projects') 
+        tempProjects = tempProjects
+          .filter( project => {
+            return this.me.ownedProjects.some((id) => id == project.id)
+          })
+      if (this.selectedOrder === 'My favorite')
+        tempProjects = tempProjects
+          .filter( project => {
+            return this.me.favouriteProjects.some((id) => id == project.id)
+          })
       
       // Filter by tags
       return tempProjects
