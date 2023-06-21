@@ -6,7 +6,7 @@
     "link": "https://github.com/Unity-Technologies/BoatAttack",
     "imageLink": "https://repository-images.githubusercontent.com/121281189/25a0e400-bda7-11e9-8961-48675648aabc",
     "created": "2021-03-22T06:49:25.000Z",
-    "recommended": false,
+    "recommended": true,
     "unityStreamVersion": {
       "__typename": "UnityStream",
       "id": 14,
