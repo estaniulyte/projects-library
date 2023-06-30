@@ -373,5 +373,70 @@
       }
     ],
     "favoredBy": []
+  },
+  {
+    "__typename": "Project",
+    "id": "41c55023rt7-b82k4",
+    "name": "Boss Room",
+    "link": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop",
+    "imageLink": "https://media.githubusercontent.com/media/Unity-Technologies/com.unity.multiplayer.samples.coop/main/Documentation/Images/Boss.png",
+    "created": "2022-03-22T06:49:25.000Z",
+    "recommended": false,
+    "unityStreamVersion": {
+      "__typename": "UnityStream",
+      "id": 22,
+      "name": "2021.3"
+    },
+    "platforms": [
+      {
+        "__typename": "Platform",
+        "id": 2,
+        "name": "Standalone"
+      },
+      {
+        "__typename": "Platform",
+        "id": 9,
+        "name": "MacOS"
+      },
+      {
+        "__typename": "Platform",
+        "id": 7,
+        "name": "Windows"
+      }
+    ],
+    "renderPipelines": [
+      {
+        "__typename": "RenderPipeline",
+        "id": 3,
+        "name": "Built-In"
+      }
+    ],
+    "testedVersions": [
+    ],
+    "tags": [
+      {
+        "__typename": "Tag",
+        "id": 12,
+        "name": "3D"
+      },
+      {
+        "__typename": "Tag",
+        "id": 14,
+        "name": "Audio"
+      },
+      {
+        "__typename": "Tag",
+        "id": 20,
+        "name": "Models"
+      }
+    ],
+    "primaryTags": [
+      {
+        "__typename": "Tag",
+        "id": 19,
+        "name": "Demo"
+      }
+    ],
+    "favoredBy": []
   }
 ]
